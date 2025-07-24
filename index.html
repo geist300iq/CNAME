@@ -79,9 +79,13 @@
 </head>
   <style>
   html {
-    scroll-behavior: smooth;
-  }
-</style>
+  scroll-behavior: smooth;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 
 <body>
 
@@ -94,40 +98,33 @@
   <p><strong>Website in development.</strong><br>Join the waitlist below.</p>
 
   <form action="https://tally.so/r/your-form-id" method="POST">
-    <!-- Privacy Policy + Terms of Service -->
-<section style="margin-top: 60px; text-align: center; color: #999; font-size: 0.9rem;">
+  <!-- Footer Links -->
+<footer style="margin-top: 60px; text-align: center; font-size: 0.9rem; color: #888;">
   <p>© 2025 Archi AI. All rights reserved.</p>
   <p>
-    <a href="#privacy" style="color: #0af;">Privacy Policy</a> · 
-    <a href="#terms" style="color: #0af;">Terms of Service</a>
+    <a href="#privacy" style="color: #0af; text-decoration: none;">Privacy Policy</a> ·
+    <a href="#terms" style="color: #0af; text-decoration: none;">Terms of Service</a>
   </p>
-</section>
+</footer>
 
-<!-- Hidden content: privacy + terms -->
-<section id="privacy" style="margin-top: 100px; color: white; max-width: 700px; margin-inline: auto;">
+<!-- Hidden Sections (scroll targets) -->
+<div id="privacy" style="max-width: 700px; margin: 100px auto 0; padding: 20px; color: #ccc;">
   <h2>Privacy Policy</h2>
-  <p>Effective date: July 24, 2025</p>
-  <p><strong>Archi AI</strong> is committed to protecting your privacy...</p>
-  <!-- Truncated for brevity — use full block I gave earlier -->
-</section>
+  <p><strong>Effective Date:</strong> July 24, 2025</p>
+  <p>We respect your privacy. Archi AI does not collect personal data without your consent...</p>
+  <p>This site does not use cookies, trackers, or ads. Email addresses collected via the waitlist are stored securely and only used to notify you about app launch updates or relevant alerts.</p>
+</div>
 
-<section id="terms" style="margin-top: 100px; color: white; max-width: 700px; margin-inline: auto;">
+<div id="terms" style="max-width: 700px; margin: 100px auto; padding: 20px; color: #ccc;">
   <h2>Terms of Service</h2>
-  <p>Effective date: July 24, 2025</p>
-  <p>Welcome to <strong>Archi AI</strong>. By using this website...</p>
-  <!-- Truncated for brevity — use full block I gave earlier -->
-</section>
-
-    <input type="email" name="email" placeholder="Email" required />
-    <br />
-    <button type="submit">Join the Waitlist →</button>
-  </form>
-
-  <div class="footer">
-    © 2025 Archi AI. All rights reserved.
-    <br />
-    <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a>
-  </div>
+  <p><strong>Effective Date:</strong> July 24, 2025</p>
+  <p>By using this site, you agree to the following terms:</p>
+  <ul style="text-align: left; line-height: 1.6;">
+    <li>This site is under active development.</li>
+    <li>Information on this site is provided “as is.”</li>
+    <li>Archi AI is not liable for any misuse of the information provided here.</li>
+  </ul>
+</div>
 
 </body>
 </html>
