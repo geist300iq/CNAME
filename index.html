@@ -26,16 +26,18 @@
     }
 
     .title {
-      font-size: 2.5rem;
       display: flex;
       align-items: center;
       gap: 0.6rem;
+      font-size: 2.5rem;
+      font-weight: bold;
       margin-bottom: 0.3em;
     }
 
     .title img {
-      height: 1.8em;
+      height: 2.2rem;
       width: auto;
+      vertical-align: middle;
     }
 
     h2 {
@@ -74,17 +76,18 @@
 
   <div class="title">
     <span>Archi</span>
-    <img src="archi-logo.png" alt="Archi Logo" />
+    <img src="archi-logo.png" alt="Archi logo" />
   </div>
 
   <h2>Touch nothing. Archi sees.</h2>
 
   <p>Website in development.<br>Join the waitlist below.</p>
 
-  <!-- Your Tally form embed -->
+  <!-- Tally Embed -->
   <iframe data-tally-src="https://tally.so/embed/wg6bAl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
           loading="lazy" width="100%" height="274" frameborder="0" marginheight="0" marginwidth="0"
           title="Join the Archi Waitlist"></iframe>
+
   <script>
     var d = document, w = "https://tally.so/widgets/embed.js", v = function () {
       "undefined" != typeof Tally ? Tally.loadEmbeds() :
