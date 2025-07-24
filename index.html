@@ -11,8 +11,13 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #0e0e0e;
       color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       text-align: center;
-      padding: 4vh 2vw;
+      padding: 2rem;
     }
 
     h1 {
@@ -23,17 +28,15 @@
     h2 {
       font-weight: normal;
       font-size: 1.4rem;
-      margin-bottom: 2rem;
       color: #aaa;
+      margin-bottom: 2rem;
     }
 
     iframe {
       width: 100%;
       max-width: 600px;
-      height: 600px;
       border: none;
-      background: #fff;
-      border-radius: 12px;
+      margin-top: 1em;
     }
 
     footer {
@@ -55,13 +58,44 @@
 <body>
   <h1>🛡️ Archi</h1>
   <h2>Touch nothing. Archi sees.</h2>
-
   <p>Website in development.<br>Join the waitlist below.</p>
 
-  <!-- ✅ Embedded waitlist form from Google (public, no login required) -->
-  <iframe
-    src="https://docs.google.com/forms/d/e/1FAIpQLSd1tX1sIuhhjtFuBueVobE9TBGOWE45plhHyjXRVEI-ijhvmA/viewform?embedded=true"
-    width="100%"
-    height="600"
-    frameborder="0"
-    marginheight
+  <!-- Tally Form -->
+  <iframe 
+    data-tally-src="https://tally.so/embed/wg6bAl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+    loading="lazy" 
+    width="100%" 
+    height="274" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0" 
+    title="Join the Archi Waitlist"
+  ></iframe>
+
+  <script>
+    var d = document, 
+        w = "https://tally.so/widgets/embed.js", 
+        v = function() {
+          if (typeof Tally !== "undefined") Tally.loadEmbeds();
+          else d.querySelectorAll("iframe[data-tally-src]:not([src])")
+                .forEach(function(e) { e.src = e.dataset.tallySrc });
+        };
+    if (typeof Tally !== "undefined") v();
+    else if (d.querySelector('script[src="'+w+'"]') == null) {
+      var s = d.createElement("script");
+      s.src = w;
+      s.onload = v;
+      s.onerror = v;
+      d.body.appendChild(s);
+    }
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Archi AI. All rights reserved.</p>
+    <p>
+      <a href="/privacy.html">Privacy Policy</a> •
+      <a href="/terms.html">Terms of Service</a>
+    </p>
+  </footer>
+</body>
+</html>
