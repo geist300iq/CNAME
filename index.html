@@ -11,13 +11,8 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #0e0e0e;
       color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       text-align: center;
-      padding: 2rem;
+      padding: 4vh 2vw;
     }
 
     h1 {
@@ -28,24 +23,17 @@
     h2 {
       font-weight: normal;
       font-size: 1.4rem;
-      color: #aaa;
       margin-bottom: 2rem;
+      color: #aaa;
     }
 
-    .waitlist-button {
-      background: #1e88e5;
-      color: white;
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 600px;
       border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      text-decoration: none;
-    }
-
-    .waitlist-button:hover {
-      background: #1565c0;
+      background: #fff;
+      border-radius: 12px;
     }
 
     footer {
@@ -70,21 +58,10 @@
 
   <p>Website in development.<br>Join the waitlist below.</p>
 
-  <a
-<iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    target="_blank"
-    rel="noopener noreferrer"
-    class="waitlist-button"
-  >
-    Join the Waitlist →
-  </a>
-
-  <footer>
-    <p>&copy; 2025 Archi AI. All rights reserved.</p>
-    <p>
-      <a href="/privacy.html">Privacy Policy</a> •
-      <a href="/terms.html">Terms of Service</a>
-    </p>
-  </footer>
-</body>
-</html>
+  <!-- ✅ Embedded waitlist form from Google (public, no login required) -->
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLSd1tX1sIuhhjtFuBueVobE9TBGOWE45plhHyjXRVEI-ijhvmA/viewform?embedded=true"
+    width="100%"
+    height="600"
+    frameborder="0"
+    marginheight
