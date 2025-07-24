@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Archi – Silent AI Guardian</title>
+  <link rel="icon" href="/archi-logo.png" />
   <style>
-    html, body {
-      height: 100%;
+    :root {
+      --bg-light: #ffffff;
+      --bg-dark: #0e0e0e;
+      --text-light: #111;
+      --text-dark: #f1f1f1;
+    }
+
+    html[data-theme='dark'] {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    html[data-theme='light'] {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    body {
       margin: 0;
-      padding: 0;
-      background: white;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: #000;
+      transition: background 0.3s, color 0.3s;
     }
 
     .container {
@@ -21,60 +36,112 @@
       justify-content: center;
       min-height: 100vh;
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
+    .logo {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
+      font-size: 2.2rem;
+      font-weight: 600;
     }
 
-    p {
+    .logo img {
+      height: 2.4rem;
+    }
+
+    .tagline {
+      margin: 0.3rem 0;
       font-size: 1.1rem;
-      margin: 0.2rem 0;
+      font-weight: 400;
     }
 
     iframe {
       width: 100%;
       max-width: 420px;
       height: 180px;
-      border: none;
       margin-top: 2rem;
+      border: none;
     }
 
     footer {
-      margin-top: 2rem;
+      margin-top: 3rem;
       font-size: 0.85rem;
-      color: #777;
+      color: inherit;
     }
 
     footer a {
-      color: #777;
       text-decoration: none;
+      color: inherit;
       margin: 0 0.5rem;
     }
 
     footer a:hover {
       text-decoration: underline;
     }
+
+    .toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      background: transparent;
+      border: 1px solid currentColor;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle:hover {
+      background: rgba(128, 128, 128, 0.1);
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Archi <span>👁️</span></h1>
-    <p>Touch nothing. Archi sees.</p>
-    <p>Join the waitlist below for early access.</p>
+    <button class="toggle" id="theme-toggle">🌓</button>
 
-    <iframe src="https://tally.so/embed/w2dMLJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" allowtransparency="true"></iframe>
+    <div class="logo">
+      <img src="archi-logo.png" alt="Archi logo">
+      <span>Archi</span>
+    </div>
+
+    <p class="tagline">Touch nothing. Archi sees.</p>
+    <p class="tagline">Join the waitlist below for early access.</p>
+
+    <iframe 
+      src="https://tally.so/embed/w2dMLJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+      loading="lazy" 
+      allowtransparency="true">
+    </iframe>
 
     <footer>
       © 2025 Archi AI. All rights reserved.
-      <a href="/privacy.html">Privacy Policy</a> ·
+      <a href="/privacy.html">Privacy Policy</a> · 
       <a href="/terms.html">Terms of Service</a>
     </footer>
   </div>
+
+  <script>
+    // Auto-detect system theme
+    const root = document.documentElement;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const currentTheme = localStorage.getItem("archi-theme") || "auto";
+    if (currentTheme === "dark" || (currentTheme === "auto" && prefersDark)) {
+      root.setAttribute("data-theme", "dark");
+    } else {
+      root.setAttribute("data-theme", "light");
+    }
+
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      const current = root.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("archi-theme", next);
+    });
+  </script>
 </body>
 </html>
