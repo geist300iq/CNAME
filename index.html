@@ -5,30 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Archi – Silent AI Guardian</title>
   <style>
-    * {
-      box-sizing: border-box;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+      background: white;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #000;
     }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #fff;
-      color: #000;
-      height: 100vh;
+    .container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
       text-align: center;
+      padding: 2rem;
     }
 
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 0.5rem;
     }
 
@@ -37,32 +37,24 @@
       margin: 0.2rem 0;
     }
 
-    .form-wrapper {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-
     iframe {
-      border: none;
       width: 100%;
-      max-width: 400px;
-      height: 200px;
+      max-width: 420px;
+      height: 180px;
+      border: none;
+      margin-top: 2rem;
     }
 
     footer {
-      position: absolute;
-      bottom: 1rem;
+      margin-top: 2rem;
       font-size: 0.85rem;
-      color: #666;
+      color: #777;
     }
 
     footer a {
-      color: #666;
-      margin: 0 0.5rem;
+      color: #777;
       text-decoration: none;
+      margin: 0 0.5rem;
     }
 
     footer a:hover {
@@ -71,22 +63,18 @@
   </style>
 </head>
 <body>
-  <main>
+  <div class="container">
     <h1>Archi <span>👁️</span></h1>
     <p>Touch nothing. Archi sees.</p>
     <p>Join the waitlist below for early access.</p>
 
-    <div class="form-wrapper">
-      <!-- Replace this URL with your actual Tally form embed -->
-      <iframe src="https://tally.so/embed/w2dMLJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy"></iframe>
-    </div>
-  </main>
+    <iframe src="https://tally.so/embed/w2dMLJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" allowtransparency="true"></iframe>
 
-  <footer>
-    © 2025 Archi AI. All rights reserved.
-    <a href="/privacy.html">Privacy Policy</a> ·
-    <a href="/terms.html">Terms of Service</a>
-  </footer>
+    <footer>
+      © 2025 Archi AI. All rights reserved.
+      <a href="/privacy.html">Privacy Policy</a> ·
+      <a href="/terms.html">Terms of Service</a>
+    </footer>
+  </div>
 </body>
 </html>
-
