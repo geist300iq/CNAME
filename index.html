@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Archi – Silent AI Guardian</title>
+  <link rel="icon" href="archi-logo.png" type="image/png">
   <style>
     body {
       margin: 0;
@@ -15,78 +16,57 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      text-align: center;
       padding: 20px;
+      text-align: center;
     }
 
     .logo-title {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 2.5rem;
-      font-weight: bold;
+      gap: 12px;
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
     }
 
     .logo-title img {
-      height: 40px;
-      vertical-align: middle;
+      height: 42px;
+      width: auto;
+      border-radius: 6px;
     }
 
     p {
       margin-top: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      max-width: 500px;
     }
 
-    form {
+    .waitlist-frame {
       margin-top: 2rem;
-    }
-
-    input[type="email"] {
-      padding: 12px;
-      font-size: 1rem;
-      width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-    }
-
-    button {
-      background-color: #007bff;
-      color: white;
+      width: 100%;
+      max-width: 600px;
+      height: 500px;
       border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
+      border-radius: 10px;
     }
 
-    .footer {
+    footer {
       margin-top: 3rem;
       font-size: 0.9rem;
-      color: #666;
+      color: #555;
     }
 
-    .footer a {
-      color: #007bff;
+    footer a {
+      color: #1e88e5;
       text-decoration: none;
-      margin: 0 5px;
+      margin: 0 6px;
     }
 
-    .footer a:hover {
+    footer a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
-  <style>
-  html {
-  scroll-behavior: smooth;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-
 <body>
 
   <div class="logo-title">
@@ -94,38 +74,22 @@ footer a:hover {
     <img src="archi-logo.png" alt="Archi Logo" />
   </div>
 
-  <p>Touch nothing. Archi sees.</p>
-  <p><strong>Website in development.</strong><br>Join the waitlist below.</p>
+  <p>Touch nothing. Archi sees.<br>Join the waitlist below for early access.</p>
 
-  <form action="https://tally.so/r/your-form-id" method="POST">
-  <!-- Footer Links -->
-<footer style="margin-top: 60px; text-align: center; font-size: 0.9rem; color: #888;">
-  <p>© 2025 Archi AI. All rights reserved.</p>
-  <p>
-    <a href="#privacy" style="color: #0af; text-decoration: none;">Privacy Policy</a> ·
-    <a href="#terms" style="color: #0af; text-decoration: none;">Terms of Service</a>
-  </p>
-</footer>
+  <iframe 
+    class="waitlist-frame"
+    src="https://tally.so/embed/wg6bAl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+    loading="lazy" 
+    title="Join the Archi Waitlist"
+  ></iframe>
 
-<!-- Hidden Sections (scroll targets) -->
-<div id="privacy" style="max-width: 700px; margin: 100px auto 0; padding: 20px; color: #ccc;">
-  <h2>Privacy Policy</h2>
-  <p><strong>Effective Date:</strong> July 24, 2025</p>
-  <p>We respect your privacy. Archi AI does not collect personal data without your consent...</p>
-  <p>This site does not use cookies, trackers, or ads. Email addresses collected via the waitlist are stored securely and only used to notify you about app launch updates or relevant alerts.</p>
-</div>
-
-<div id="terms" style="max-width: 700px; margin: 100px auto; padding: 20px; color: #ccc;">
-  <h2>Terms of Service</h2>
-  <p><strong>Effective Date:</strong> July 24, 2025</p>
-  <p>By using this site, you agree to the following terms:</p>
-  <ul style="text-align: left; line-height: 1.6;">
-    <li>This site is under active development.</li>
-    <li>Information on this site is provided “as is.”</li>
-    <li>Archi AI is not liable for any misuse of the information provided here.</li>
-  </ul>
-</div>
+  <footer>
+    <p>&copy; 2025 Archi AI. All rights reserved.</p>
+    <p>
+      <a href="/privacy.html">Privacy Policy</a> •
+      <a href="/terms.html">Terms of Service</a>
+    </p>
+  </footer>
 
 </body>
 </html>
-
