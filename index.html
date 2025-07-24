@@ -3,105 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Archi – Early Access</title>
+  <title>Archi – Silent AI Guardian</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: #fff;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #fff;
       color: #000;
+      height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.2rem;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
     }
 
     p {
-      margin: 0.2rem 0;
       font-size: 1.1rem;
-      text-align: center;
+      margin: 0.2rem 0;
     }
 
-    form {
-      margin-top: 2.5rem;
+    .form-wrapper {
+      margin-top: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 1rem;
     }
 
-    input[type="email"] {
-      padding: 0.75rem 1rem;
-      font-size: 1rem;
-      width: 250px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      outline: none;
-      transition: border 0.2s ease;
-    }
-
-    input[type="email"]:focus {
-      border-color: #000;
-    }
-
-    button {
-      background-color: #000;
-      color: #fff;
-      padding: 0.75rem 1.2rem;
+    iframe {
       border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      width: 100%;
+      max-width: 400px;
+      height: 200px;
     }
 
-    button:hover {
-      opacity: 0.9;
-    }
-
-    .footer {
-      margin-top: auto;
-      font-size: 0.8rem;
-      text-align: center;
-      padding: 2rem;
+    footer {
+      position: absolute;
+      bottom: 1rem;
+      font-size: 0.85rem;
       color: #666;
     }
 
-    @media (max-width: 500px) {
-      input[type="email"] {
-        width: 80vw;
-      }
+    footer a {
+      color: #666;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Archi <span>👁️</span></h1>
-  <p>Touch nothing. Archi sees.</p>
-  <p>Join the waitlist below for early access.</p>
+  <main>
+    <h1>Archi <span>👁️</span></h1>
+    <p>Touch nothing. Archi sees.</p>
+    <p>Join the waitlist below for early access.</p>
 
-  <form action="https://YOUR-FORM-HANDLER-URL" method="POST">
-    <input type="email" name="email" placeholder="Email" required />
-    <button type="submit">Submit →</button>
-  </form>
+    <div class="form-wrapper">
+      <!-- Replace this URL with your actual Tally form embed -->
+      <iframe src="https://tally.so/embed/w2dMLJ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy"></iframe>
+    </div>
+  </main>
 
-  <!-- Optional footer -->
-  <!--
-  <div class="footer">
+  <footer>
     © 2025 Archi AI. All rights reserved.
-  </div>
-  -->
+    <a href="/privacy.html">Privacy Policy</a> ·
+    <a href="/terms.html">Terms of Service</a>
+  </footer>
 </body>
 </html>
 
