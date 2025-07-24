@@ -1,152 +1,158 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Archi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archi – Touch nothing. Archi sees.</title>
+  <link rel="icon" href="/favicon.ico" />
   <style>
     :root {
       --bg-light: #ffffff;
-      --text-light: #111111;
+      --text-light: #000000;
       --bg-dark: #000000;
       --text-dark: #ffffff;
     }
 
+    html {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+
     body {
       margin: 0;
-      padding: 0;
-      background: var(--bg-light);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       min-height: 100vh;
+      background-color: var(--bg-light);
       color: var(--text-light);
-      transition: background 0.3s, color 0.3s;
     }
 
     body.dark {
-      background: var(--bg-dark);
+      background-color: var(--bg-dark);
       color: var(--text-dark);
     }
 
-    .container {
-      padding-top: 80px;
-      text-align: center;
-      width: 100%;
-      max-width: 600px;
+    .toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      border: 2px solid #007aff;
+      border-radius: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      cursor: pointer;
+      background: transparent;
+      font-size: 1.2rem;
     }
 
     .logo {
-      font-size: 2.5rem;
-      font-weight: 700;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 10px;
+      gap: 0.4rem;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 4rem;
+      margin-bottom: 1.5rem;
     }
 
-    .logo img {
-      height: 32px;
-      filter: invert(0%);
+    .logo svg {
+      width: 28px;
+      height: 28px;
     }
 
-    body.dark .logo img {
-      filter: invert(100%);
-    }
-
-    .tagline {
+    p {
+      text-align: center;
+      margin: 0.5rem 0;
       font-size: 1.1rem;
-      margin-bottom: 32px;
     }
 
-    iframe {
+    form {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
       width: 100%;
-      height: 200px;
+      max-width: 400px;
+    }
+
+    input[type="email"] {
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
       border: none;
-      overflow: hidden;
+      background-color: #000;
+      color: #fff;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background-color: #333;
     }
 
     footer {
-      margin-top: 80px;
-      padding: 20px;
-      font-size: 0.85rem;
-      color: inherit;
+      margin-top: auto;
+      padding: 2rem 0 1rem;
+      font-size: 0.8rem;
+      text-align: center;
     }
 
-    footer a {
+    a {
       color: inherit;
       text-decoration: underline;
-      margin: 0 6px;
     }
 
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: none;
-      border: 2px solid currentColor;
-      border-radius: 6px;
-      padding: 6px 12px;
-      cursor: pointer;
-      font-size: 0.85rem;
-    }
-
-    @media (max-width: 500px) {
-      .logo {
-        font-size: 2rem;
-      }
-
-      .tagline {
-        font-size: 1rem;
-      }
+    a:hover {
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">☀ / 🌙</button>
+  <div class="toggle" onclick="toggleMode()">☀️ / 🌙</div>
 
-  <div class="container">
-    <div class="logo">
-      Archi
-      <img src="https://raw.githubusercontent.com/feathericons/feather/master/icons/eye.svg" alt="Eye Logo"/>
-    </div>
-
-    <div class="tagline">
-      Touch nothing. Archi sees.<br>
-      Join the waitlist below for early access.
-    </div>
-
-    <!-- Tally embed -->
-    <iframe data-tally-src="https://tally.so/embed/wg6bAl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Archi Waitlist"></iframe>
-    <script>
-      let d = document, w = "https://tally.so/widgets/embed.js";
-      if (!d.querySelector(`script[src="${w}"]`)) {
-        let s = d.createElement("script");
-        s.src = w;
-        s.onload = () => Tally.loadEmbeds();
-        d.body.appendChild(s);
-      }
-    </script>
-
-    <footer>
-      © 2025 Archi AI. All rights reserved. ·
-      <a href="/privacy-policy" target="_blank">Privacy Policy</a> ·
-      <a href="/terms-of-service" target="_blank">Terms of Service</a>
-    </footer>
+  <div class="logo">
+    <span>Archi</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"></path>
+      <circle cx="12" cy="12" r="3"></circle>
+    </svg>
   </div>
 
-  <script>
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) {
-      document.body.classList.add('dark');
-    }
+  <p>Touch nothing. Archi sees.</p>
+  <p>Join the waitlist below for early access.</p>
 
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
+  <form action="https://tally.so/r/wg6bAl" method="POST" target="_blank">
+    <input type="email" name="email" placeholder="Email" required />
+    <button type="submit">Submit →</button>
+  </form>
+
+  <footer>
+    © 2025 Archi AI. All rights reserved. ·
+    <a href="/privacy.html">Privacy Policy</a> ·
+    <a href="/terms.html">Terms of Service</a>
+  </footer>
+
+  <script>
+    // System preference on load
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (prefersDark) document.body.classList.add("dark");
+
+    function toggleMode() {
+      document.body.classList.toggle("dark");
     }
   </script>
 </body>
 </html>
+
