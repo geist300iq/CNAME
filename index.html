@@ -1,90 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Archi – Silent AI Guardian</title>
-  <link rel="icon" href="archi-logo.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archi – Silent AI Guardian</title>
+    <link rel="icon" href="archi-logo.png" />
+    <script async data-tally-widget="wg6bAl" src="https://tally.so/widgets/embed.js"></script>
 
-  <style>
-    :root {
-      color-scheme: light dark;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      margin: 0;
-      background-color: white;
-      color: black;
-      transition: background-color 0.3s, color 0.3s;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #111;
-        color: white;
+    <style>
+      :root {
+        color-scheme: light dark;
       }
-    }
 
-    img.logo {
-      height: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background: white;
+        color: black;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
 
-    .tagline {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #111;
+          color: white;
+        }
+      }
 
-    iframe {
-      width: 100%;
-      max-width: 400px;
-      height: 250px;
-      border: none;
-      border-radius: 8px;
-      overflow: hidden;
-    }
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.25rem;
+      }
 
-    .footer {
-      margin-top: 3rem;
-      font-size: 0.75rem;
-      opacity: 0.6;
-    }
-  </style>
-</head>
+      p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        color: inherit;
+      }
 
-<body>
+      .tally-open {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        border: none;
+        background-color: black;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
 
-  <img src="archi-logo.png" alt="Archi Logo" class="logo" />
+      .tally-open:hover {
+        background-color: #333;
+      }
 
-  <h1>Touch nothing. Archi sees.</h1>
-  <p class="tagline">Join the waitlist below for early access.</p>
+      .footer {
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        opacity: 0.6;
+      }
+    </style>
+  </head>
+  <body>
 
-  <!-- Tally Form Embed -->
-  <iframe
-    data-tally-src="https://tally.so/embed/wg6bAl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-    loading="lazy"
-    width="100%"
-    height="250"
-    title="Archi Waitlist"
-  ></iframe>
+    <img src="archi-logo.png" alt="Archi Logo" height="40" />
+    <h1>Touch nothing. Archi sees.</h1>
+    <p>Join the waitlist below for early access.</p>
 
-  <script>
-    const script = document.createElement("script");
-    script.src = "https://tally.so/widgets/embed.js";
-    script.defer = true;
-    document.body.appendChild(script);
-  </script>
+    <!-- Native Tally Button (Minimal) -->
+    <button class="tally-open" data-tally-open="wg6bAl" data-tally-layout="modal" data-tally-width="400" data-tally-hide-title="1">
+      Submit Email
+    </button>
 
-  <div class="footer">© 2025 Archi AI. All rights reserved.</div>
+    <div class="footer">
+      © 2025 Archi AI. All rights reserved.
+      <br />
+      <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a>
+    </div>
 
-</body>
+  </body>
 </html>
 
