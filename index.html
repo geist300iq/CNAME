@@ -16,6 +16,10 @@
     }
 
     @media (prefers-color-scheme: dark) {
+      .logo-img {
+        filter: brightness(2); /* lightens dark logos */
+      }
+    }
       :root {
         --bg: #000;
         --text: #fff;
@@ -112,7 +116,7 @@
 <body>
   <div class="logo-title">
     <span>Archi</span>
-    <img src="logo.svg" alt="Archi Eye Logo" />
+    <img src="logo.png" alt="Archi Logo" height="40" onerror="this.style.displays='none' " />
   </div>
 
   <div class="tagline">
