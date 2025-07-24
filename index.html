@@ -1,89 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Archi – Silent AI Guardian</title>
-    <link rel="icon" href="archi-logo.png" />
-    <script async data-tally-widget="wg6bAl" src="https://tally.so/widgets/embed.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Archi – Silent AI Guardian</title>
+  <link rel="icon" href="archi-logo.png" />
 
-    <style>
-      :root {
-        color-scheme: light dark;
-      }
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
 
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      background: white;
+      color: black;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    @media (prefers-color-scheme: dark) {
       body {
-        font-family: 'Segoe UI', sans-serif;
-        background: white;
-        color: black;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        text-align: center;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        body {
-          background-color: #111;
-          color: white;
-        }
-      }
-
-      h1 {
-        font-size: 1.8rem;
-        margin-bottom: 0.25rem;
-      }
-
-      p {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-        color: inherit;
-      }
-
-      .tally-open {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        border: none;
-        background-color: black;
+        background: #111;
         color: white;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background 0.3s ease;
       }
+    }
 
-      .tally-open:hover {
-        background-color: #333;
-      }
+    input[type="email"] {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-width: 300px;
+      background: transparent;
+      color: inherit;
+    }
 
-      .footer {
-        margin-top: 2rem;
-        font-size: 0.8rem;
-        opacity: 0.6;
-      }
-    </style>
-  </head>
-  <body>
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-    <img src="archi-logo.png" alt="Archi Logo" height="40" />
-    <h1>Touch nothing. Archi sees.</h1>
-    <p>Join the waitlist below for early access.</p>
+    button:hover {
+      background: #444;
+    }
 
-    <!-- Native Tally Button (Minimal) -->
-    <button class="tally-open" data-tally-open="wg6bAl" data-tally-layout="modal" data-tally-width="400" data-tally-hide-title="1">
-      Submit Email
-    </button>
+    .logo {
+      margin-bottom: 1rem;
+      height: 40px;
+    }
 
-    <div class="footer">
-      © 2025 Archi AI. All rights reserved.
-      <br />
-      <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a>
-    </div>
+    .footer {
+      font-size: 0.75rem;
+      opacity: 0.6;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
 
-  </body>
+  <img src="archi-logo.png" alt="Archi" class="logo" />
+  <h1>Touch nothing. Archi sees.</h1>
+  <p>Join the waitlist below for early access.</p>
+
+  <form id="waitlist-form">
+    <input type="email" id="email" placeholder="Enter your email" required />
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="confirmation" style="display:none; margin-top:1rem;">✅ You're on the list.</div>
+
+  <div class="footer">
+    © 2025 Archi AI • <a href="privacy.html">Privacy</a> • <a href="terms.html">Terms</a>
+  </div>
+
+  <script>
+    const form = document.getElementById('waitlist-form');
+    const emailInput = document.getElementById('email');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = emailInput.value;
+
+      // Send to Tally via their form submission endpoint
+      await fetch('https://tally.so/r/wg6bAl', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `email=${encodeURIComponent(email)}`
+      });
+
+      form.style.display = 'none';
+      confirmation.style.display = 'block';
+    });
+  </script>
+
+</body>
 </html>
-
