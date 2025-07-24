@@ -6,7 +6,7 @@
   <title>Archi — Silent AI Guardian</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
       background-color: #fff;
       color: #111;
       margin: 0;
@@ -15,7 +15,7 @@
     }
 
     .container {
-      padding-top: 10vh;
+      padding-top: 12vh;
       max-width: 600px;
       margin: auto;
     }
@@ -28,30 +28,32 @@
     }
 
     .logo h1 {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
+      font-weight: 600;
       margin: 0;
     }
 
     .logo img {
-      height: 2.5rem;
+      height: 2.4rem;
       width: auto;
     }
 
     .tagline {
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     iframe {
-      margin-top: 2rem;
+      margin-top: 3rem;
       width: 100%;
-      height: 300px;
+      height: 320px;
       border: none;
     }
 
     footer {
       margin-top: 4rem;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: #777;
     }
 
@@ -78,11 +80,15 @@
       Join the waitlist below for early access.
     </div>
 
-    <!-- Replace with your actual form embed URL -->
-    <iframe data-tally-src="https://tally.so/embed/wg6bAl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="157" frameborder="0" marginheight="0" marginwidth="0" title="
-Join the Archi Waitlist
-"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+    <!-- Replace with your Tally embed URL -->
+    <iframe
+      data-tally-src="https://tally.so/embed/wg6bAl?transparentBackground=1&dynamicHeight=1"
+      loading="lazy"
+      width="100%"
+      height="320"
+      frameborder="0"
+      title="Archi Waitlist">
+    </iframe>
   </div>
 
   <footer>
@@ -92,7 +98,7 @@ Join the Archi Waitlist
   </footer>
 
   <script>
-    // Enable Tally embed if using data-tally-src
+    // Enable Tally embed from data attribute
     const iframe = document.querySelector("iframe[data-tally-src]");
     if (iframe) {
       iframe.src = iframe.dataset.tallySrc;
