@@ -1,107 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Archi – Silent AI Guardian</title>
-  <link rel="icon" href="archi-logo.png" type="image/png" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Archi — Silent AI Guardian</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
   <style>
-    * {
-      box-sizing: border-box;
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0);       }
     }
 
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #ffffff;
-      color: #000000;
+      background-color: #fafafa;
+      color: #222;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: start;
       min-height: 100vh;
-      text-align: center;
+      animation: fadeIn 1s ease-out;
     }
 
-    .logo-title {
+    .header {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-top: 5vh;
+      animation: fadeIn 1.2s ease-out forwards;
+      opacity: 0;
     }
 
-    .logo-title img {
-      width: 2.2rem;
-      height: 2.2rem;
+    .header img {
+      width: 2rem;
+      height: auto;
+      display: block;
     }
 
-    p {
-      font-size: 1.1rem;
-      margin: 0.3rem 0;
+    .header h1 {
+      font-size: 2.2rem;
+      margin: 0;
+      font-weight: 600;
     }
 
-    iframe {
-      margin-top: 1.8rem;
+    .subhead {
+      margin-top: 0.5rem;
+      color: #555;
+      font-size: 1rem;
+      text-align: center;
+      animation: fadeIn 1.4s ease-out forwards;
+      opacity: 0;
+    }
+
+    .subhead.small {
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+
+    .form-container {
+      margin-top: 3vh;
+      width: 90%;
+      max-width: 400px;
+      animation: fadeIn 1.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .form-container iframe,
+    .form-container form {
+      width: 100%;
       border: none;
-      max-width: 100%;
-      width: 360px;
-      height: 240px;
     }
 
     footer {
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      color: #666;
+      margin-top: auto;
+      padding: 2rem 0;
+      font-size: 0.8rem;
+      color: #888;
+      text-align: center;
+      animation: fadeIn 1.8s ease-out forwards;
+      opacity: 0;
     }
 
     footer a {
       color: #0066cc;
       text-decoration: none;
-      margin: 0 0.4rem;
+      margin: 0 0.5rem;
     }
 
-    @media (max-width: 480px) {
-      .logo-title {
-        font-size: 2rem;
-      }
-
-      iframe {
-        width: 90%;
-        height: 220px;
-      }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
-  <div class="logo-title">
-    <span>Archi</span>
-    <img src="archi-logo.png" alt="Archi Logo" />
+  <!-- Header: logo + title -->
+  <div class="header">
+    <h1>Archi</h1>
+    <img src="archi-logo.png" alt="Archi Logo"/>
   </div>
 
-  <p><strong>Touch nothing. Archi sees.</strong></p>
-  <p>Website in development.<br>Join the waitlist below for early access.</p>
+  <!-- Tagline -->
+  <div class="subhead">
+    Touch nothing. Archi sees.
+  </div>
+  <div class="subhead small">
+    Join the waitlist below for early access.
+  </div>
 
-  <iframe 
-    data-tally-src="https://tally.so/embed/w4l7EW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-    loading="lazy"
-  ></iframe>
+  <!-- Waitlist form embed -->
+  <div class="form-container">
+    <!-- Option A: Tally embed (recommended) -->
+    <iframe
+      data-tally-src="https://tally.so/embed/https://tally.so/r/wg6bAl?transparentBackground=1&dynamicHeight=1"
+      loading="lazy"
+      width="100%"
+      height="300"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="Join the Archi Waitlist">
+    </iframe>
+    
+    <!-- Option B: Google Form iframe (uncomment and replace YOUR_FORM_ID if you prefer)
+    <iframe
+      src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+      width="100%"
+      height="600"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0">
+      Loading…
+    </iframe>
+    -->
+  </div>
 
+  <!-- Footer: legal links -->
   <footer>
-    © 2025 Archi AI. All rights reserved.<br />
-    <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a>
+    &copy; 2025 Archi AI. All rights reserved.<br/>
+    <a href="/privacy.html">Privacy Policy</a> •
+    <a href="/terms.html">Terms of Service</a>
   </footer>
-
-  <script>
-    let d = document, w = "https://tally.so/widgets/embed.js";
-    if (!d.querySelector(`script[src="${w}"]`)) {
-      let s = d.createElement("script");
-      s.src = w;
-      s.onload = () => Tally.loadEmbeds();
-      d.body.appendChild(s);
-    }
-  </script>
 </body>
 </html>
+
