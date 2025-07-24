@@ -4,62 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Archi — Silent AI Guardian</title>
-  <link rel="icon" href="archi-logo-white.png" type="image/png" />
+  <link rel="icon" href="archi-logo.png" type="image/png" />
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0e0e0e;
-      color: white;
+      background: #0e0e0e;
+      color: #ffffff;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: flex-start;
       min-height: 100vh;
       text-align: center;
-      animation: fadeIn 1.5s ease-in;
+      padding: 4vh 2vw;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .title {
-      font-size: 2.8rem;
-      font-weight: bold;
+    header {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
     }
 
-    .title img {
-      height: 2.2rem;
-      vertical-align: middle;
+    header img {
+      height: 40px;
+      width: 40px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      margin: 0;
     }
 
     h2 {
       font-weight: normal;
-      font-size: 1.3rem;
-      color: #ccc;
+      font-size: 1.2rem;
+      color: #aaa;
       margin-bottom: 2rem;
     }
 
     iframe {
-      border: none;
       width: 100%;
-      max-width: 480px;
-      height: 280px;
-      margin: 1rem auto;
-      border-radius: 10px;
-      overflow: hidden;
+      max-width: 600px;
+      height: 500px;
+      border: none;
+      background: #fff;
+      border-radius: 12px;
     }
 
     footer {
       margin-top: 3em;
       font-size: 0.85rem;
-      color: #777;
+      color: #666;
     }
 
     a {
@@ -74,21 +71,29 @@
 </head>
 <body>
 
-  <div class="title">
-    Archi <img src="archi-logo-white.png" alt="Archi logo" />
-  </div>
+  <header>
+    <img src="archi-logo.png" alt="Archi logo" />
+    <h1>Archi 👁️</h1>
+  </header>
+
   <h2>Touch nothing. Archi sees.</h2>
 
-  <p>Website in development.<br>Join the waitlist below.</p>
-
-  <!-- Tally form embed -->
-  <iframe data-tally-src="https://tally.so/embed/wg6bAl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" title="Join the Archi Waitlist"></iframe>
+  <!-- 👇 Waitlist Embed -->
+  <iframe 
+    data-tally-src="https://tally.so/embed/wg6bAl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+    loading="lazy"
+    width="100%"
+    height="500"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    title="Join the Archi Waitlist"
+  ></iframe>
   <script>
     var d=document,w="https://tally.so/widgets/embed.js",v=function(){
-      if("undefined"!=typeof Tally)Tally.loadEmbeds();
-      else d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){
-        e.src=e.dataset.tallySrc
-      });
+      "undefined"!=typeof Tally?Tally.loadEmbeds():
+      d.querySelectorAll("iframe[data-tally-src]:not([src])")
+      .forEach((function(e){e.src=e.dataset.tallySrc}))
     };
     if("undefined"!=typeof Tally) v();
     else if(d.querySelector('script[src="'+w+'"]')==null){
@@ -107,5 +112,7 @@
       <a href="/terms.html">Terms of Service</a>
     </p>
   </footer>
+
 </body>
 </html>
+
