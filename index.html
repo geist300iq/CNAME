@@ -1,102 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Archi – Silent AI Guardian</title>
+  <link rel="icon" href="archi-logo.png" type="image/png" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #ffffff;
       color: #000000;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
+      align-items: center;
+      min-height: 100vh;
       text-align: center;
-      padding: 20px;
     }
 
     .logo-title {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 0.5rem;
       font-size: 2.5rem;
       font-weight: bold;
-      color: #000000;
+      margin-bottom: 0.5rem;
     }
 
     .logo-title img {
-      width: 40px; /* Adjust to logo size */
-      height: auto;
+      width: 2.2rem;
+      height: 2.2rem;
     }
 
     p {
-      margin-top: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      margin: 0.3rem 0;
     }
 
-    form {
-      margin-top: 2rem;
-    }
-
-    input[type="email"] {
-      padding: 12px;
-      font-size: 1rem;
-      width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-    }
-
-    button {
-      background-color: #007bff;
-      color: white;
+    iframe {
+      margin-top: 1.8rem;
       border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
+      max-width: 100%;
+      width: 360px;
+      height: 240px;
     }
 
-    .footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
+    footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
       color: #666;
     }
 
-    .footer a {
-      color: #007bff;
+    footer a {
+      color: #0066cc;
       text-decoration: none;
-      margin: 0 5px;
+      margin: 0 0.4rem;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
+    @media (max-width: 480px) {
+      .logo-title {
+        font-size: 2rem;
+      }
 
+      iframe {
+        width: 90%;
+        height: 220px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="logo-title">
     <span>Archi</span>
-    <img src="archi-logo.png" alt="Archi Logo">
+    <img src="archi-logo.png" alt="Archi Logo" />
   </div>
 
-  <p>Touch nothing. Archi sees.</p>
-  <p><strong>Website in development.</strong><br>Join the waitlist below.</p>
+  <p><strong>Touch nothing. Archi sees.</strong></p>
+  <p>Website in development.<br>Join the waitlist below for early access.</p>
 
-  <form action="https://tally.so/r/your-form-id" method="POST">
-    <input type="email" name="email" placeholder="Email" required>
-    <button type="submit">Join the Waitlist →</button>
-  </form>
+  <iframe 
+    data-tally-src="https://tally.so/embed/w4l7EW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+    loading="lazy"
+  ></iframe>
 
-  <div class="footer">
-    © 2025 Archi AI. All rights reserved.
-    <br>
+  <footer>
+    © 2025 Archi AI. All rights reserved.<br />
     <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a>
-  </div>
+  </footer>
+
+  <script>
+    let d = document, w = "https://tally.so/widgets/embed.js";
+    if (!d.querySelector(`script[src="${w}"]`)) {
+      let s = d.createElement("script");
+      s.src = w;
+      s.onload = () => Tally.loadEmbeds();
+      d.body.appendChild(s);
+    }
+  </script>
 </body>
 </html>
